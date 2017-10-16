@@ -4,6 +4,26 @@ import java.util.*;
 
 public class CharSorter
 {
+    //The goal of this method is to record the frequencies
+    //of all the characters in the string from the user
+    public static int[] recordFrequencies(String userInput, char[] ascii)
+    {
+        int[] frequencies = new int[95];
+
+        for(int index = 0; index < userInput.length(); index++)
+        {
+            char character = userInput.charAt(index);
+
+            for(int num = 0; num < ascii.length; num++)
+            {
+                if (character == ascii[num])
+                    frequencies[num]++;
+            }
+        }
+        return frequencies;
+    }
+
+
     //The goal of this method is to sort all of the
     //characters in alphabetical order.
     //Argument and return types can be changed.
@@ -91,6 +111,43 @@ public class CharSorter
 
     public static void main (String[] args)
     {
+        Scanner scanner = new Scanner(System.in);
+        Boolean runAgain = true;
+        int choice = 1;
+        String userInput;
 
+        System.out.println("Welcome to Character Sorter Program");
+        System.out.println("Please input a string to be sorted");
+        userInput = scanner.nextLine();
+        //Send userInput to a method that records the frequencies of each character
+
+        while (runAgain)
+        {
+            /**
+             *  Get text from user
+             *  Go to the printOptionsAndCatchErrors method to get the user's choice
+             *  Carry out the choice that the user selects
+             **/
+
+
+            //What to do based on user's choice
+            if (choice == 1) {
+                //Display the character frequencies alphabetically
+
+            } else if (choice == 2) {
+                //Display the sorted frequencies
+
+            } else if (choice == 3) {
+                //Show types of character frequencies
+
+            } else if (choice == 4) {
+                //Exit sorter
+                System.out.println("Character Sorter Exited Successfully");
+                runAgain = false;
+            }
+        }
+
+
+        return;
     }
 }
