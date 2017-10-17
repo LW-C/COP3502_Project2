@@ -26,16 +26,22 @@ public class CharSorter
 
     //The goal of this method is to sort all of the
     //characters in alphabetical order.
-    //Argument and return types can be changed.
-    public static String[] alphabeticalSort (String[] var)
+    public static void alphabeticalSort (char[] ascii, int[] frequencies)
     {
-
+        for(int index = 0; index < ascii.length; index++)
+        {
+            if(frequencies[index] > 0)
+            {
+                System.out.println(ascii[index] + " freq: " + frequencies[index]);
+            }
+        }
+        System.out.println();
     }
 
     //The goal of this method is to sort all of the
     //characters from highest to lowest frequency.
     //Argument and return types can be changed.
-    public static String[] frequencySort (String[] var)
+    public static void frequencySort (String[] var)
     {
 
     }
@@ -44,7 +50,7 @@ public class CharSorter
     //Textual characters, Numeric characters, WhiteSpace characters,
     //and Symbolic characters.
     //Argument and return types can be changed.
-    public static String[] charTypes (String[] var)
+    public static void charTypes (String[] var)
     {
 
     }
@@ -237,7 +243,7 @@ public class CharSorter
             if (choice == 1)
             {
                 //Display the character frequencies alphabetically
-
+                alphabeticalSort(ascii, frequencies);
             }
             else if (choice == 2)
             {
