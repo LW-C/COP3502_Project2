@@ -40,7 +40,6 @@ public class CharSorter
 
     //The goal of this method is to sort all of the
     //characters from highest to lowest frequency.
-    //Argument and return types can be changed.
     public static void frequencySort (String[] var)
     {
 
@@ -49,7 +48,6 @@ public class CharSorter
     //The goal of this method is to sort the data into four categories:
     //Textual characters, Numeric characters, WhiteSpace characters,
     //and Symbolic characters.
-    //Argument and return types can be changed.
     public static void charTypes (int[] frequencies)
     {
         int textual = 0;
@@ -96,9 +94,7 @@ public class CharSorter
         Boolean error = true;
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("");
-        System.out.println("Please select the option you would like to see");
-        System.out.println("");
+        System.out.println("\nPlease select the option you would like to see\n");
         System.out.println("1. Display character frequencies alphabetically");
         System.out.println("2. Display sorted frequencies");
         System.out.println("3. Show types of character frequencies");
@@ -137,8 +133,7 @@ public class CharSorter
 
             scanner.nextLine();
 
-            System.out.println("Please select the option you would like to see");
-            System.out.println("");
+            System.out.println("\nPlease select the option you would like to see\n");
             System.out.println("1. Display character frequencies alphabetically");
             System.out.println("2. Display sorted frequencies");
             System.out.println("3. Show types of character frequencies");
@@ -148,15 +143,9 @@ public class CharSorter
 
     }
 
-    public static void main (String[] args)
+    public static char[] createAscii()
     {
-        Scanner scanner = new Scanner(System.in);
-        Boolean runAgain = true;
-        int[] frequencies = new int[95];
         char[] ascii = new char[95];
-        int choice = 1;
-        String userInput;
-
         //Put all of the variables in the ascii array
         ascii[0]  = ' ';
         ascii[1]  = '!';
@@ -253,6 +242,20 @@ public class CharSorter
         ascii[92] = '|';
         ascii[93] = '}';
         ascii[94] = '~';
+
+        return ascii;
+    }
+
+    public static void main (String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        Boolean runAgain = true;
+        int[] frequencies = new int[95];
+        char[] ascii = createAscii();
+        int choice = 1;
+        String userInput;
+
+
 
         //Take the string input from the user
         System.out.println("Welcome to Character Sorter Program");
