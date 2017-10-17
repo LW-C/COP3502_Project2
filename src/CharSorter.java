@@ -50,9 +50,41 @@ public class CharSorter
     //Textual characters, Numeric characters, WhiteSpace characters,
     //and Symbolic characters.
     //Argument and return types can be changed.
-    public static void charTypes (String[] var)
+    public static void charTypes (int[] frequencies)
     {
+        int textual = 0;
+        int numerical = 0;
+        int whiteSpace = 0;
+        int symbol = 0;
 
+        if (frequencies[0] > 0)
+            whiteSpace += frequencies[0];
+
+        for(int index = 1; index < 16; index++)
+            symbol += frequencies[index];
+
+        for(int index = 16; index < 26; index++)
+            numerical += frequencies[index];
+
+        for(int index = 26; index < 33; index++)
+            symbol += frequencies[index];
+
+        for(int index = 33; index < 59; index++)
+            textual += frequencies[index];
+
+        for(int index = 59; index < 65; index++)
+            symbol += frequencies[index];
+
+        for(int index = 65; index < 91; index++)
+            textual += frequencies[index];
+
+        for(int index = 91; index < 95; index++)
+            symbol += frequencies[index];
+
+        System.out.println("Textual Character count: " + textual);
+        System.out.println("Numerical Character count: " + numerical);
+        System.out.println("WhiteSpace Character count: " + whiteSpace);
+        System.out.println("Symbol Character count: " + symbol);
     }
 
     //The goal of this method is to print the options to the
@@ -64,6 +96,7 @@ public class CharSorter
         Boolean error = true;
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("");
         System.out.println("Please select the option you would like to see");
         System.out.println("");
         System.out.println("1. Display character frequencies alphabetically");
@@ -253,12 +286,12 @@ public class CharSorter
             else if (choice == 3)
             {
                 //Show types of character frequencies
-
+                charTypes(frequencies);
             }
             else if (choice == 4)
             {
                 //Exit sorter
-                System.out.println("Character Sorter Exited Successfully");
+                System.out.println("\nCharacter Sorter Exited Successfully");
                 runAgain = false;
             }
         }
