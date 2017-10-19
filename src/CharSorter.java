@@ -40,9 +40,26 @@ public class CharSorter
 
     //The goal of this method is to sort all of the
     //characters from highest to lowest frequency.
-    public static void frequencySort (String[] var)
+    public static void frequencySort (char[] ascii, int[] frequencies)
     {
+        int highest = 0;
 
+        System.out.println("The sorted by frequency characters are:\n");
+
+        for(int index = 0; index < frequencies.length; index++)
+        {
+            if(highest < frequencies[index])
+                highest = frequencies[index];
+        }
+
+        for(int num = highest; num > 0; num--)
+        {
+            for(int index = 0; index < frequencies.length; index++)
+            {
+                if (frequencies[index] == num)
+                    System.out.println(ascii[index] + " freq: " + frequencies[index]);
+            }
+        }
     }
 
     //The goal of this method is to sort the data into four categories:
@@ -284,7 +301,7 @@ public class CharSorter
             else if (choice == 2)
             {
                 //Display the sorted frequencies
-
+                frequencySort(ascii, frequencies);
             }
             else if (choice == 3)
             {
